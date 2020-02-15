@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo Lista</title>
+
+    <style>
+
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .main {
+            padding: 1rem;
+            min-width: 100%;
+            min-height: 100vh;
+            background: #3a6186;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #89253e, #3a6186); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .main-wrapper {
+            max-width: 968px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 1rem 1rem 2rem; 
+            background-color: #2c3e50;
+            border: 3px solid gray;
+            border-radius: 1rem;
+        }
+
+        h1 {
+            margin: 1rem;
+        }
+        
+        input, button {
+            margin: .25rem 0;
+        }
+
+        input {
+            border: none;
+            padding: .5rem .2rem;
+        }
+        
+        button {
+            display: inline-block;
+            max-width: 28%;
+            height: 50px;
+            background:#89253e;
+            border: none;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            font-size: .75rem;
+            color: #fff;
+            text-transform: uppercase;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #fff;
+            color: #000;
+            padding: 1rem;
+            border-radius: 3px;
+            margin: .5rem 0;
+        }
+
+        li p {
+            margin-top: 0;
+        }
+
+        li button {
+            display: block;
+            margin: .5rem auto;
+        }
+
+        li span {
+            display: block;
+            font-size: .75rem;
+            color: rgba(0,0,0,.6);
+        }
+
+        .dodaj {
+            display: block;
+            margin: .5rem auto;
+            width: 50%;
+            max-width: 200px;
+            font-size: 1.2rem;
+            background: #6a5acd;
+        }
+
+        .searchTask {
+            margin: .5rem auto;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .finished {
+            text-decoration: line-through;
+        }
+
+        .content,
+        .searchTask {
+            display: block;
+        }
+
+        div.button-holder {
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+        @media (max-width: 500px) {
+            
+            div.button-holder button {
+                font-size: .5rem;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+
+    <main class='main'>
+        <div class='main-wrapper'>
+
+            <h1>toDo App</h1>
+
+            <form>
+                <input class='tytul' name='tytul' type='text' placeholder="Podaj nazwę zadania"/>
+                <input class='opis' type='text' placeholder='Podaj opis zadania'/>
+                <button class='dodaj' type='submit'>Dodaj</button>
+            </form>
+
+            <ul>
+            </ul>
+
+            <input id='searchTask' class='searchTask' type='text' placeholder="Wyszukaj zadanie" />
+            <div class='button-holder'>
+                <button id='filterDone'>Pokaż ukończone</button>
+                <button id='filterUndone'>Pokaż nieukończone</button>
+                <button id='showAll'>Pokaż wszystko</button>
+            </div>
+
+        </div>
+    </main>
+    
+    <script src='main.js'></script>
+</body>
+</html>
